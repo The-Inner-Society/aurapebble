@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AURA PEBBLE | Hold calm. Live rhythm.</title>
+<meta name="description" content="Aura Pebble wellness wearable. Hold calm. Live rhythm. Join the waitlist today.">
+<meta property="og:title" content="AURA PEBBLE | Hold calm. Live rhythm.">
+<meta property="og:description" content="Aura Pebble wellness wearable. Hold calm. Live rhythm. Join the waitlist today.">
+<meta property="og:image" content="placeholder-og.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+  /* RESET */
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; font-family: 'Inter', sans-serif; }
+  body { background-color:#F8F1E9; color:#2A2A2A; overflow-x:hidden; }
+
+  a { text-decoration:none; color:inherit; }
+
+  /* FONTS */
+  h1,h2,h3,h4,h5 { font-family:'Playfair Display', serif; }
+  p,li,span { font-family:'Inter', sans-serif; }
+
+  /* BUTTON */
+  .cta-btn {
+    background: #D13438; color:#fff; padding:1rem 2rem;
+    font-weight:600; font-size:1rem; border:none; border-radius:999px;
+    position:relative; overflow:hidden; cursor:pointer; transition:all 0.3s ease;
+  }
+  .cta-btn span.drip {
+    position:absolute; width:10px; height:10px; border-radius:50%;
+    background:#fff; pointer-events:none;
+    animation:drip-fall 0.6s forwards;
+  }
+  @keyframes drip-fall { to { transform: translateY(100px) scale(0); opacity:0; } }
+
+  /* HERO */
+  #hero {
+    height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center;
+    text-align:center; padding:2rem; position:relative; overflow:hidden;
+  }
+  #hero h1 { font-size:2.5rem; color:#2A2A2A; margin-bottom:0.5rem; }
+  #hero p { color:#2A2A2A; margin-bottom:1.5rem; font-size:1.2rem; }
+
+  /* Floating Pebble + Aria Aura */
+  .pebble-container { position:relative; width:150px; height:150px; margin:2rem 0; }
+  .pebble {
+    width:120px; height:120px; border-radius:50%;
+    background: radial-gradient(circle at 30% 30%, #D13438, #F8C8DC, #FFFFFF);
+    box-shadow:0 0 20px #D13438,0 0 40px #F8C8DC,0 0 60px #FFFFFF;
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    animation:float 4s ease-in-out infinite, glow 3s ease-in-out infinite alternate;
+    z-index:2;
+  }
+  .aura {
+    width:150px; height:150px; border-radius:50%;
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    background: radial-gradient(circle, rgba(0,245,212,0.2) 0%, rgba(0,245,212,0) 70%);
+    filter: blur(25px); animation:aura-pulse 3s infinite alternate, aura-rotate 8s linear infinite;
+    z-index:1;
+  }
+
+  @keyframes float {
+    0%,100% { transform:translate(-50%,-50%) translateY(0) rotate(0deg);}
+    50% { transform:translate(-50%,-50%) translateY(-20px) rotate(15deg);}
+  }
+  @keyframes glow {
+    0% { box-shadow:0 0 20px #D13438,0 0 40px #F8C8DC,0 0 60px #FFFFFF;}
+    50% { box-shadow:0 0 30px #F8C8DC,0 0 50px #FFFFFF,0 0 70px #D13438;}
+    100% { box-shadow:0 0 20px #D13438,0 0 40px #F8C8DC,0 0 60px #FFFFFF;}
+  }
+  @keyframes aura-pulse {
+    0% { transform:translate(-50%,-50%) scale(1);}
+    50% { transform:translate(-50%,-50%) scale(1.1);}
+    100% { transform:translate(-50%,-50%) scale(1);}
+  }
+  @keyframes aura-rotate { 0%{transform:translate(-50%,-50%) rotate(0deg);} 100%{transform:translate(-50%,-50%) rotate(360deg);} }
+
+  /* FORM */
+  form { display:flex; max-width:400px; width:100%; gap:0.5rem; margin-top:1rem; position:relative; z-index:10; }
+  form input[type="email"] {
+    flex:1; padding:0.8rem 1rem; border-radius:999px; border:1px solid #D13438; font-size:1rem;
+  }
+  form button { border-radius:999px; }
+
+  /* LIFESTYLE */
+  #lifestyle {
+    height:100vh; display:flex; align-items:center; justify-content:center;
+    background:url('lifestyle-4panel.jpg') center/cover no-repeat; position:relative;
+  }
+  #lifestyle h2 {
+    position:absolute; bottom:2rem; width:100%; text-align:center; font-size:2rem; color:#fff; text-shadow:0 0 10px rgba(0,0,0,0.5);
+  }
+
+  /* FEATURES */
+  #features { padding:4rem 2rem; text-align:center; }
+  #features h2 { margin-bottom:2rem; font-size:2rem; }
+  .feature-list { display:grid; grid-template-columns:1fr; gap:1.5rem; max-width:800px; margin:0 auto; }
+  .feature-item {
+    background:#fff; padding:2rem; border-radius:20px; box-shadow:0 4px 20px rgba(0,0,0,0.05);
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .feature-item:hover { transform:translateY(-10px); box-shadow:0 8px 30px rgba(0,0,0,0.1); }
+  .feature-img { width:100%; max-width:400px; margin:1rem auto; border-radius:20px; transition:transform 0.3s ease; }
+  .feature-item:hover .feature-img { transform:scale(1.05); }
+
+  /* FIRST 100 */
+  #first100 { background:#D13438; color:#fff; padding:4rem 2rem; text-align:center; position:relative; }
+  #first100 h2 { font-size:2rem; margin-bottom:1.5rem; }
+  #first100 ul { list-style:none; margin-bottom:2rem; }
+  #first100 ul li { margin-bottom:0.8rem; font-size:1.1rem; display:flex; align-items:center; justify-content:center; gap:0.5rem; }
+  #first100 #countdown { font-weight:700; margin-top:1rem; font-size:1.2rem; }
+
+  /* FOOTER */
+  footer { padding:2rem; text-align:center; font-size:0.9rem; color:#2A2A2A; background:#F8F1E9; }
+
+  /* MEDIA */
+  @media(min-width:768px){
+    #hero h1 { font-size:4rem; }
+    #hero p { font-size:1.5rem; }
+    .feature-list { grid-template-columns:repeat(2,1fr); }
+  }
+  @media(min-width:1200px){
+    .feature-list { grid-template-columns:repeat(4,1fr); }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section id="hero">
+  <h1>🍒 AURA PEBBLE</h1>
+  <p>Hold calm. Live rhythm.<br>
+  Aura Pebble + Aria + Cherry Calm<br>
+  Created by 4r1ann3 (@ariannesanchez)</p>
+  <div class="pebble-container">
+    <div class="aura"></div>
+    <div class="pebble"></div>
+  </div>
+  <form id="waitlistForm">
+    <input type="email" placeholder="Your email..." required>
+    <button type="submit" class="cta-btn">👄 JOIN 1K ON WAITLIST</button>
+  </form>
+  <p id="formMessage" style="margin-top:1rem;"></p>
+</section>
+
+<!-- LIFESTYLE -->
+<section id="lifestyle">
+  <h2>Different lives. One ritual.</h2>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <h2>AURA PEBBLE FEATURES:</h2>
+  <div class="feature-list">
+    <div class="feature-item">
+      <img src="features-graphic.jpg" alt="Biomorphic design" class="feature-img">
+      <p>Biomorphic river-stone design</p>
+    </div>
+    <div class="feature-item">
+      <img src="features-graphic.jpg" alt="Thermal warmth" class="feature-img">
+      <p>38°C thermal grounding warmth</p>
+    </div>
+    <div class="feature-item">
+      <img src="features-graphic.jpg" alt="Haptic-music sync" class="feature-img">
+      <p>Haptic-music sync (4r1ann3 beats)</p>
+    </div>
+    <div class="feature-item">
+      <img src="features-graphic.jpg" alt="Screenless control" class="feature-img">
+      <p>Screenless single-button control</p>
+    </div>
+  </div>
+</section>
+
+<!-- FIRST 100 -->
+<section id="first100">
+  <h2>FIRST 100 GET:</h2>
+  <ul>
+    <li>✅ Aura Pebble prototype (Summer '26)</li>
+    <li>✅ Cherry Calm tea (ships NOW)</li>
+    <li>✅ Aria app lifetime access</li>
+    <li>✅ 4r1ann3 ritual album</li>
+  </ul>
+  <form id="first100Form">
+    <input type="email" placeholder="Your email..." required>
+    <button type="submit" class="cta-btn">👄 JOIN WAITLIST</button>
+  </form>
+  <p id="countdown">47 spots left</p>
+  <p id="firstFormMessage" style="margin-top:1rem;"></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  pebble-ritual.manus.page | Summer 2026<br>
+  4r1ann3 (@ariannesanchez) | Miami, FL
+</footer>
+
+<script>
+  // FORM SUBMISSION + CHERRY CONFETTI
+  function cherryConfetti(count){
+    for(let i=0;i<count;i++){
+      const conf = document.createElement('div');
+      conf.style.position='fixed';
+      conf.style.top='0px';
+      conf.style.left=Math.random()*window.innerWidth+'px';
+      conf.style.width='8px';
+      conf.style.height='8px';
+      conf.style.background='#F8C8DC';
+      conf.style.borderRadius='50%';
+      conf.style.zIndex='9999';
+      conf.style.pointerEvents='none';
+      conf.style.animation=`fall ${1+Math.random()}s linear forwards`;
+      document.body.appendChild(conf);
+      setTimeout(()=>conf.remove(),1500);
+    }
+  }
+
+  const styleSheet = document.createElement('style');
+  styleSheet.innerText = `
+    @keyframes fall { to { transform: translateY(100vh) rotate(360deg); opacity:0; } }
+  `;
+  document.head.appendChild(styleSheet);
+
+  const waitlistForm = document.getElementById('waitlistForm');
+  const formMessage = document.getElementById('formMessage');
+  waitlistForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    const email = waitlistForm.querySelector('input').value;
+    try {
+      await new Promise(r=>setTimeout(r,500));
+      const position = Math.floor(Math.random()*1000)+1;
+      formMessage.textContent = `You're #${position} on waitlist! 🎉`;
+      waitlistForm.reset();
+      cherryConfetti(30);
+    } catch { formMessage.textContent = "Oops, try again baby 💗"; }
+  });
+
+  const first100Form = document.getElementById('first100Form');
+  const firstFormMessage = document.getElementById('firstFormMessage');
+  first100Form.addEventListener('submit', async e=>{
+    e.preventDefault();
+    try {
+      await new Promise(r=>setTimeout(r,500));
+      const position = Math.floor(Math.random()*100)+1;
+      firstFormMessage.textContent = `You're #${position} on waitlist! 🎉`;
+      first100Form.reset();
+      cherryConfetti(20);
+    } catch { firstFormMessage.textContent = "Oops, try again baby 💗"; }
+  });
+
+  // Lifestyle parallax
+  window.addEventListener('scroll',()=>{
+    const lifestyle = document.getElementById('lifestyle');
+    const offset = window.scrollY * 0.3;
+    lifestyle.style.backgroundPosition = `center ${offset}px`;
+  });
+
+  // Button drip effect
+  document.querySelectorAll('.cta-btn').forEach(btn=>{
+    btn.addEventListener('mouseenter', e=>{
+      const drip = document.createElement('span');
+      drip.classList.add('drip');
+      drip.style.left = e.offsetX+'px';
+      drip.style.top = e.offsetY+'px';
+      btn.appendChild(drip);
+      setTimeout(()=>drip.remove(),600);
+    });
+  });
+</script>
+</body>
+</html>
